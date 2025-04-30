@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <title>Edit Task</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <div class="formContainer">
+  <h1 id="title">Edit Task</h1>
+
+  <form action="/users/<%= user._id %>/tasks/<%= item._id %>?_method=PUT" method="POST" class="editForm">
+    <label for="date">Date:</label>
+    <input
+    type="text"
+    name="date"
+    id="date"
+    value="<%= task.date %>" />
+
+    <label for="time">Time:</label>
+    <input
+    type="text"
+    name="time"
+    id="time"
+    value="<%= task.time %>" />
+
+    <label for="note">Task:</label>
+    <input
+    type="text"
+    name="note"
+    id="note"
+    value="<%= task.note %>" />
+
+    <label for="isComplete">Complete:</label>
+      <input
+      type="checkbox"
+      name="isComplete"
+      id="isComplete" <% if (task.isComplete) { %>checked<% } %> />
+
+    <button type="submit">Update Task</button>
+  </form>
+</div>
+</body>
+</html>

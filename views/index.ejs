@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   <title>Home Page</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
   <%- include('./partials/_navbar.ejs') %>
+  <div class="titleContainer">
   <% if (user) { %>
-    <h1>Welcome to PanTracker, <%= user.username %>!</h1>
+    <h1 id="title"><%= user.username %>'s PanTracker</h1>
   <% } else { %>
-    <h1>Welcome to PanTracker.</h1>
+    <h1 id="title">PanTracker</h1>
   <% } %>
+</div>
 </body>
 </html>

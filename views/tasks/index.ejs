@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <title>My Tasks</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+
+  <div class="formContainer">
+    <h1 id="title">Welcome to PanTracker</h1>
+
+    <a class="newTaskBtn" href="/users/<%= user._id %>/tasks/new">+ New Task</a>
+
+    <% if (task.length > 0) { %>
+      <ul class="taskList">
+        <% task.forEach(task => { %>
+          <li class="taskItem">
+            <p>Date: <%= task.date %></p>
+            <p>Time: <%= task.time %></p>
+            <p>Task: <%= task.note %></p>
+
+            <div class="taskActions">
+              <a href="/users/<%= user._id %>/tasks/<%= task._id %>/edit" class="actionBtn">Edit</a>
+
+              <label class="checkboxLabel">
+                <input type="checkbox" name="isComplete" id="isComplete" <% if (task.isComplete) { %>checked<% } %> />
+                Complete?
+              </label>
+
+              <form action="/users/<%= user._id %>/tasks/<%= task._id %>?_method=DELETE" method="POST" class="inlineForm">
+                <button type="submit" class="deleteBtn">Delete</button>
+              </form>
+            </div>
+          </li>
+        <% }) %>
+      </ul>
+    <% } else { %>
+      <p class="emptyMessage">There are no tasks listed yet!</p>
+    <% } %>
+  </div>
+</body>
+</html>

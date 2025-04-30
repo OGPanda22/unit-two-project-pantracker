@@ -15,7 +15,6 @@ const taskSchema = new mongoose.Schema({
   },
   isComplete: {
     type: String,
-    required: true,
   },
 });
 
@@ -29,6 +28,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  
   task: [taskSchema]
  
 });

@@ -1,0 +1,284 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: 'Anton', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #ffffff;
+  }
+  
+
+  #title {
+    font-size: 4rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 2rem 0 1rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    color: #f4f4f4;
+  }
+  
+
+  .titleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    margin: 2rem auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+
+  nav {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #ffcc00;
+  }
+  
+
+  .formContainer {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+
+  .editForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .editForm label {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  
+  .editForm input[type="text"],
+  .editForm input[type="password"],
+  .editForm input[type="datetime-local"],
+  .editForm textarea {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    margin-top: 0.5rem;
+    background-color: #ffffff;
+    color: #333;
+  }
+  
+
+  .editForm .checkboxLabel {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: #fff;
+  }
+  
+
+  .editForm button {
+    margin-top: 2rem;
+    padding: 0.75rem;
+    background-color: #ffcc00;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .editForm button:hover {
+    background-color: #e6b800;
+  }
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+  }
+
+  .newTaskBtn {
+    display: inline-block;
+    margin: 1rem 0;
+    padding: 0.5rem 1.2rem;
+    background-color: #ffcc00;
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+  }
+  
+  .newTaskBtn:hover {
+    background-color: #e6b800;
+  }
+
+  .taskList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .taskItem {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .taskItem p {
+    margin: 0.25rem 0;
+    color: #fff;
+  }
+
+  .taskActions {
+    margin-top: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .actionBtn {
+    background-color: #4caf50;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .actionBtn:hover {
+    background-color: #43a047;
+  }
+
+  .deleteBtn {
+    background-color: #f44336;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .deleteBtn:hover {
+    background-color: #d32f2f;
+  }
+  
+  .inlineForm {
+    display: inline;
+  }
+  
+  .emptyMessage {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+  }
+
+  .checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+  }
+
+  .communityList {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .communityList li {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+  }
+  
+  .communityList li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .communityList a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .communityList a:hover {
+    text-decoration: underline;
+  }
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+  }
+
+  .taskList {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .taskItem {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .taskItem p {
+    margin: 0.3rem 0;
+  }
+  
+  .emptyMessage {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+  }
+  
