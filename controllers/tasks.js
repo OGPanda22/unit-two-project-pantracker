@@ -48,15 +48,16 @@ router.delete('/:itemId', async (req, res) => {
 });
 
 router.get('/:itemId/edit', async (req, res) => {
+  console.log("loading edit form", req.session)
     try {
 
       const currentUser = await User.findById(req.session.user._id);
-
+      console.log(currentUser)
       const task = currentUser.task.id(req.params.itemId);
-
+      console.log(task, currentUser)
       res.render('tasks/edit.ejs', { 
 
-        item: item });
+        task: task });
     } catch (error) {
       res.redirect('/');
     }
@@ -67,6 +68,13 @@ router.put('/:itemId', async (req, res) => {
     const currentUser = await User.findById(req.session.user._id);
 
     const task = currentUser.task.id(req.params.itemId);
+
+    if(!Object.hasOwn(req.body,"isComplete")){
+      req.body.isComplete = false;
+    } else {
+      req.body.isComplete = true;
+    };
+    
     
       task.set(req.body);
 
@@ -74,6 +82,7 @@ router.put('/:itemId', async (req, res) => {
     
       res.redirect(`/users/${currentUser._id}/tasks`);
     } catch (error) {
+      console.log(error);
       res.redirect('/');
     };
 });
